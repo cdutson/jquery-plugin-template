@@ -15,11 +15,10 @@
         // This handles a multiple item selector such as $('ul li')
         if (this.length > 1) {
             var a = new Array();
-            this.each(
+            return this.each(
                 function (i) {
                     a.push($(this).myPlugin(options, i));
                 });
-            return a;
         }
         var opts = $.extend({}, $().myPlugin.defaults, options);
  
