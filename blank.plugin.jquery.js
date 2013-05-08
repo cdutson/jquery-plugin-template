@@ -1,6 +1,6 @@
 /**
 * A blank jQuery plugin example for further use
-* Version: 		1.1
+* Version: 		1.2
 * Author:		Corey Dutson
 * Description: 	Shell to use for the plugins we build
 * Requires: 	jQuery
@@ -29,9 +29,8 @@
          * This function should undo everything you did when creating this object in the first place
          * @param <bool> reInit - whether to reinitialize the plugin after destroying it
          */
-        this.Destroy = function (reInit) {
+        this.Destroy = function () {
             var container = this;
-            var reInit = (reInit != undefined) ? reInit : false;
             // this removes the flag so we can re-initialize
             $(container)[0].removeAttribute('data-'+ pluginName); 
         };
@@ -44,7 +43,7 @@
         this.Update = function (options) {
             opts = null;
             opts = $.extend({}, $().ryaccordion.defaults, options);
-            this.Destroy(true);
+            this.Destroy();
             return this.Create();
         };
  
