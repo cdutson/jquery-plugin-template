@@ -36,3 +36,33 @@ $declaredThing.PublicFunction();
 $declaredThing.PublicHelper.tellMeSomething();
 $declaredThing.PublicHelper.doSomething(true);
 ```
+
+##Gotchas
+Currently chaining only half works. The following will work:
+
+```javascript
+// This works
+$('#target').myPlugin().css('border', '1px solid red');
+
+// This also works
+var $t = $('#target').myPlugin();
+$t.css('border', '1px solid red');
+
+$t.PublicFunction();
+
+```
+
+The following will not function as expected:
+
+```javascript
+// This works...
+var $t = $('#target').myPlugin();
+$t.css('border', '1px solid red');
+
+// But this will not...
+$t.PublicFunction();
+// ...Nor this...
+$t[0].PublicFunction();
+// ...Nor this.
+$(t[0]).PublicFunction();
+```
