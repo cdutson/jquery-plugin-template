@@ -3,7 +3,7 @@ jquery-plugin-template
 
 My jQuery template for quick plugin development. Typically used for things such as carousels, accordions, and whatnot.
 
-##Useage
+##Usage
 This sample plugin is fairly straight-forward. To use it, you would declare it like any normal plugin:
 
 ```javascript
@@ -26,7 +26,7 @@ $declaredThing.Destroy();
 // Call on its own
 $.myPlugin().Create.call(document.getElementById('target'));
 
-// The update function will destry and recreate the plugin with the new options specified
+// The update function will destroy and recreate the plugin with the new options specified
 $declaredThing.Update({foo: "anotherBar"});
 
 // Example public function
